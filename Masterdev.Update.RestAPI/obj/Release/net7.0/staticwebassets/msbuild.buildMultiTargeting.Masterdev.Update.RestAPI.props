@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Masterdev.Update.RestAPI.props" />
+</Project>

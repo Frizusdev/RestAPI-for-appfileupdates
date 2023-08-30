@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Masterdev.Update.RestAPI</name>
+    </assembly>
+    <members>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.GetApps">
+            <summary>
+            Zwraca listę aplikacji w bazie danych z ich ID potrzebnym do wgrania aktualizacji na serwer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.GetUpdate(System.String,System.String)">
+            <summary>
+            Funkcja get pozwalająca na pobranie aktualizacji z serwera po nazwie pliku (Nazwy sie nie powtorzą)
+            Można zaktualizować ścieżki o podfolder z nazwą aplikacji dla czytelności
+            </summary>
+            <param name="file_name">Nazwa Pliku</param>
+            <param name="version">Wersja aktualizacji</param>
+            <returns></returns>
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.UploadUpdate(Microsoft.AspNetCore.Http.IFormFile,System.String,System.Int32,System.Int32)">
+            <summary>
+            Funkcja do wgrywania aktualizacji na serwer (wersja aplikacji jest weryfikowana tutaj)
+            </summary>
+            <param name="postedFile">Zip z aktualizacją</param>
+            <param name="version">Wersja Aktualizacji</param>
+            <param name="who">Kto wgrywa</param>
+            <param name="app_id">ID aplikacji</param>
+            <returns></returns>
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.AddToDBFile(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Wywoływana po prawidłowym wgraniu pliku na serwer ,dodaje rekord w bazie danych o dodanym pliku przez kogo oraz wersji
+            </summary>
+            <param name="filename">Nazwa Pliku Zip Aktualizacji</param>
+            <param name="createdby">Przez Kogo Wgrane</param>
+            <param name="version">Wersja Aktualizacji</param>
+            <returns></returns>
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.GetNewerVersion(System.String,System.String)">
+            <summary>
+            Funkcja zwracająca nowszą wersję do konsoli gdy jest aktualna zwraca null
+            </summary>
+            <param name="appname">Nazwa aplikacji</param>
+            <param name="version">Aktualnie wgrana wersja</param>
+            <returns></returns>
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Controllers.Masterdev_Updater.AddNewApplication(System.String,System.String,System.String)">
+            <summary>
+            Dodaje applikacje do bazy danych oraz zwraca zip z aplikacją konsolową
+            </summary>
+            <param name="appname">Nazwa Aplikacji Do bazy danych i IIS</param>
+            <param name="directoryname">Nazwa podfolderu z aplikacją do aktualizowania</param>
+            <param name="address">Adres strony</param>
+            <returns></returns>
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.IntitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.IntitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.IntitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.IntitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.one">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.one.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.one.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.one.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.second">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.second.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.second.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.second.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.third">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.third.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.third.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.third.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.fourth">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.fourth.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.fourth.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.fourth.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.new">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.new2">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.new2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Masterdev.Update.RestAPI.Migrations.init">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Masterdev.Update.RestAPI.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

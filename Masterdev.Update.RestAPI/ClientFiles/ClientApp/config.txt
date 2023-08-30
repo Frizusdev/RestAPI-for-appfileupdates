@@ -1,0 +1,1 @@
+{"updateFilePath":"http://10.0.1.172/Masterdev_Updater/GetNewerVersion","serverFileName":"uploaded.txt","updateZipFilePath":"http://10.0.1.172/Masterdev_Updater/GetUpdate","applicationName":"awdwada","directoryName":"dwadawdaw"}
